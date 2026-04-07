@@ -46,7 +46,7 @@ class CopyState extends MusicBeatState
 		checkExistingFiles();
 		if (maxLoopTimes <= 0)
 		{
-			FlxG.switchState(new TitleState());
+			MusicBeatState.switchState(new TitleState());
 			return;
 		}
 
@@ -95,7 +95,7 @@ class CopyState extends MusicBeatState
 				}
 				canUpdate = false;
 				FlxG.sound.play(Paths.sound('confirmMenu')).onComplete = () -> {
-					FlxG.switchState(new TitleState());
+					MusicBeatState.switchState(new TitleState());
 				};
 			}
 

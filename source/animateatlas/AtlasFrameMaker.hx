@@ -17,8 +17,8 @@ import flixel.graphics.frames.FlxFrame;
 import sys.FileSystem;
 import sys.io.File;
 #else
-import js.html.FileSystem;
-import js.html.File;
+// import js.html.FileSystem;
+// import js.html.File;
 #end
 
 using StringTools;

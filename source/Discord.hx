@@ -12,10 +12,9 @@ using StringTools;
 
 class DiscordClient
 {
-	#if desktop
 	public function new()
 	{
-		trace("Discord Client starting...");
+		/* trace("Discord Client starting...");
 		DiscordRpc.start({
 			clientID: "962874789473693796",
 			onReady: onReady,
@@ -31,22 +30,22 @@ class DiscordClient
 			//trace("Discord Client Update");
 		}
 
-		DiscordRpc.shutdown();
+		DiscordRpc.shutdown(); */
 	}
 	
 	public static function shutdown()
 	{
-		DiscordRpc.shutdown();
+		// DiscordRpc.shutdown();
 	}
 	
 	static function onReady()
 	{
-		DiscordRpc.presence({
+		/* DiscordRpc.presence({
 			details: "In the Menus",
 			state: null,
 			largeImageKey: 'icon',
 			largeImageText: "Freaky Night With Soni"
-		});
+		}); */
 	}
 
 	static function onError(_code:Int, _message:String)
@@ -61,11 +60,11 @@ class DiscordClient
 
 	public static function initialize()
 	{
-		var DiscordDaemon = sys.thread.Thread.create(() ->
+		/* var DiscordDaemon = sys.thread.Thread.create(() ->
 		{
 			new DiscordClient();
 		});
-		trace("Discord Client initialized");
+		trace("Discord Client initialized"); */
 	}
 
 	public static function changePresence(details:String, state:Null<String>, ?smallImageKey : String, ?hasStartTimestamp : Bool, ?endTimestamp: Float)
@@ -77,7 +76,7 @@ class DiscordClient
 			endTimestamp = startTimestamp + endTimestamp;
 		}
 
-		DiscordRpc.presence({
+		/* DiscordRpc.presence({
 			details: details,
 			state: state,
 			largeImageKey: 'icon',
@@ -86,7 +85,7 @@ class DiscordClient
 			// Obtained times are in milliseconds so they are divided so Discord can use it
 			startTimestamp : Std.int(startTimestamp / 1000),
             endTimestamp : Std.int(endTimestamp / 1000)
-		});
+		}); */
 
 		//trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}
@@ -97,6 +96,5 @@ class DiscordClient
 			changePresence(details, state, smallImageKey, hasStartTimestamp, endTimestamp);
 		});
 	}
-	#end
 	#end
 }

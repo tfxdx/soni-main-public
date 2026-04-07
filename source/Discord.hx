@@ -12,6 +12,7 @@ using StringTools;
 
 class DiscordClient
 {
+	#if desktop
 	public function new()
 	{
 		trace("Discord Client starting...");
@@ -96,5 +97,6 @@ class DiscordClient
 			changePresence(details, state, smallImageKey, hasStartTimestamp, endTimestamp);
 		});
 	}
+	#end
 	#end
 }

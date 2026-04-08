@@ -136,7 +136,7 @@ class Codes extends MusicBeatState
                     PlayState.SONG = Song.loadFromJson('pico', 'pico');
                     LoadingState.loadAndSwitchState(new PlayState());
                     FlxG.mouse.visible = false;
-                case '7545': //Shadow fucking die bruhhh
+                /* case '7545': //Shadow fucking die bruhhh
                     FlxG.mouse.visible = false;
                     FlxG.sound.pause();
                     canSelect = false;
@@ -157,7 +157,7 @@ class Codes extends MusicBeatState
                         FlxG.mouse.visible = true;
                         canSelect = true;
                     }
-                    code.text = '';
+                    code.text = ''; */
                 default: //Nothing lol
                     code.text = '';
                     if(canSelect)

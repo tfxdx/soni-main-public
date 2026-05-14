@@ -62,8 +62,7 @@ class MainMenuState extends MusicBeatState
 
 	override function create()
 	{
-		if(FlxG.save.data.beatedSoni)
-			FlxG.mouse.visible = true;
+		FlxG.mouse.visible = true;
 
 		WeekData.loadTheFirstEnabledMod();
 
@@ -133,8 +132,7 @@ class MainMenuState extends MusicBeatState
 		codes.setGraphicSize(261,158);
 		codes.updateHitbox();
 		codes.antialiasing = ClientPrefs.globalAntialiasing;
-		if(FlxG.save.data.beatedSoni)
-			add(codes);
+		add(codes);
 
 		arrow = new FlxSprite(110, 481).loadGraphic(Paths.image('mainmenu/soni/arrow'));
 		arrow.updateHitbox();
